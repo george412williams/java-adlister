@@ -16,6 +16,13 @@ public class DadJokeServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         // getting a passed param so
         String joke = request.getParameter("joke");
+        // default for blank parameter
+        if(joke == null){
+            joke = "hungry";
+        }
+
+        out.println("<hi> Hi " + joke + ", I'm Dad!</h1>");
+
     }
 
 }
