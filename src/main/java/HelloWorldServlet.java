@@ -12,9 +12,23 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        String content = "<h1>Hello, World!</h1>";
+        String name = request.getParameter("name");
+        if(name == null){
+            name = "World";
+        }
+        String content = "<h1>Hello, " + name + "!";
 
         PrintWriter out = response.getWriter();
         out.println(content);
+
+        // Bonus
+        //
+        // Make the page say "Hello, <name>!"
+        // if name is passed as part of the query string
+        // (e.g. /hello?name=codeup),
+        // otherwise default to "Hello, World!".
+
+        //test - works
+        //http://localhost:8080/hello?name=bill
     }
 }
