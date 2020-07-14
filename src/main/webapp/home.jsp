@@ -47,7 +47,7 @@
     <h3>What would you like to do?</h3>
 
     <h3>view your profile</h3>
-    <form action="/profile.jsp" method="get">
+    <form action="/user-profile.jsp" method="get">
         <input type="hidden" id="username" name="username">
         <button type="submit">Go There</button>
     </form>
@@ -62,6 +62,10 @@
     <form action="/home.jsp" method="post">
         <button type="submit"></button>
     </form>
+
+        <%--login page part of exercise, if login as admin w pw redirected to admin page,
+        in real life, something has to check if that is correct, don't want  to send pw
+        to another jsp, just want to check it, servlets do that--%>
 
 
 

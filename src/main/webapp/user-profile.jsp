@@ -13,6 +13,9 @@
 <body>
 
 <h1>Hi, <%= request.getParameter("username")%></h1>
+<h1>Hi, ${param.username}</h1>
+<h3>${paramValues}</h3>
+    <%-- Gives array, note the output --%>
 
 </body>
 </html>
