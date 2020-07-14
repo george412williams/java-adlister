@@ -10,7 +10,7 @@
 <%!
     String firstName = "George";
     String lastName = "Willie";
-    String note = "This is not good separation of concerns/ mixing logic and presentation is bad practice"
+    String note = "This is not good separation of concerns/ mixing logic and presentation is bad practice";
 %>
 
 <html>
@@ -20,16 +20,22 @@
 <body>
 
     <%--use include directive for nav and footer--%>
-    <%@ include file="WEB-INF/partials/navbar.jsp"%>
+    <%@ include file="partials/navbar.jsp"%>
 
     <%--get a greeting says hello, user/ an actual name--%>
     <h1><%=note%>></h1>
     <h1>Hello, <%= firstName %> <%= lastName %></h1>
 
-    <%@ include file="WEB-INF/partials/footer.jsp"%>
-
     <%--create an aboutme.jsp file in partials and include in home.jsp--%>
-    <%@ include file="WEB-INF/partials/aboutme.jsp"%>
+    <%@ include file="partials/aboutme.jsp"%>
+
+    <%
+    if (firstName != null){
+        if (firstName.equals("George")){
+            response.sendRedirect("/index.jsp");
+        }
+    }
+    %>
 
     <h1>Welcome To The Site!</h1>
     <p>Path: <%= request.getRequestURL() %></p>
@@ -37,6 +43,29 @@
     <p>"name" parameter: <%= request.getParameter("name") %></p>
     <p>"method" attribute: <%= request.getMethod() %></p>
     <p>User-Agent header: <%= request.getHeader("user-agent") %></p>
+
+    <h3>What would you like to do?</h3>
+
+    <h3>view your profile</h3>
+    <form action="/profile.jsp" method="get">
+        <input type="hidden" id="username" name="username">
+        <button type="submit">Go There</button>
+    </form>
+
+    <h3>Add a To Do</h3>
+    <form action="/todo.jsp" method="post">
+        <input type="text" id="item" name="item">
+        <button type="submit"></button>
+    </form>
+
+    <h3>this button is for what?</h3>
+    <form action="/home.jsp" method="post">
+        <button type="submit"></button>
+    </form>
+
+
+
+    <%@ include file="partials/footer.jsp"%>
 
 </body>
 </html>
