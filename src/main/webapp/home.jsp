@@ -28,5 +28,8 @@
 
     <%@ include file="WEB-INF/partials/footer.jsp"%>
 
+    <%--create an aboutme.jsp file in partials and include in home.jsp--%>
+    <%@ include file="WEB-INF/partials/aboutme.jsp"%>
+
 </body>
 </html>
