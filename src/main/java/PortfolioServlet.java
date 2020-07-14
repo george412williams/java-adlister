@@ -10,10 +10,13 @@ public class PortfolioServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+
         String content = "<h1>My Portfolio</h1>";
         content += "<p>my awesome portfolio</p> <br><hr><br>";
         content += "<a href='/resume'>My Resume</a>";
+
+        PrintWriter out = response.getWriter();
         out.println(content);
     }
 

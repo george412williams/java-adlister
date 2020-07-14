@@ -11,12 +11,15 @@ public class ResumeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+
         String content = "<h1>My Resume</h1>";
         content += "<p>I write a lot of code. Check my GitHub</p>";
         content += "<hr><br>";
         content += "<a href='https://github.com/'>My GitHub Profile</a><br>";
         content += "<a href='/portfolio'>My Portfolio</a>";
+
+        PrintWriter out = response.getWriter();
         out.println(content);
     }
 
