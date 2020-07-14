@@ -12,6 +12,7 @@ public class CountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
+
         //Create a page that displays a number that goes up
         // by one every time the /count page is viewed.
         //
