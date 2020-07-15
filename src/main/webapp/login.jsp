@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: georgewilliams
@@ -6,6 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%!
+    String username = "admin";
+    String password = "password";
+//    Boolean username;
+%>
+
 <html>
 <head>
     <title>Login</title>
@@ -15,10 +23,10 @@
     <h1>Login:</h1>
     <form action="/login.jsp" method="post">
 <%--        <label for="username">Username:</label>--%>
-        <input type="text" id="username" placeholder="username">
+        <input type="text" id="username" placeholder="Username">
 
 <%--        <label for="password">Password:</label>--%>
-        <input type="text" id="password" placeholder="password">
+        <input type="text" id="password" placeholder="Password">
 
         <button type="submit">Login</button>
     </form>
@@ -27,14 +35,24 @@
 If the username submitted is "admin", and the password is "password",
 redirect the user to the profile page; otherwise, redirect back to the login form.--%>
 
-<%--if statement for username if true--%>
-    <c:if test="${username}">
-        <%@ include file="profile.jsp" %>
+
+    <c:if test="${username == admin and password == password}">
+        <% response.sendRedirect("/profile.jsp"); %>
     </c:if>
-<%--password will be--%>
-    <c:if test="${password == password}">
-        <%@ include file="profile.jsp" %>
-    </c:if>
+
+    <c:choose>
+        <c:when test="">
+
+        </c:when>
+    </c:choose>
+
+<%--    <c:if test="${username = null and password = null}">--%>
+<%--        <% response.sendRedirect("/login.jsp"); %>--%>
+
+<%--    </c:if>--%>
+
+
+<%--    <%= request.getParameter("username")%>--%>
 
 
 </body>

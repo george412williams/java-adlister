@@ -12,7 +12,7 @@
 </head>
 <body>
 
-
+<h1>This is your admin profile page.</h1>
 
 </body>
 </html>

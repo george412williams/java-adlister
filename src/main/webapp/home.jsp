@@ -56,12 +56,12 @@
     <h3>Add a To Do</h3>
     <form action="/todo.jsp" method="post">
         <input type="text" id="item" name="item">
-        <button type="submit"></button>
+        <button type="submit">Submit</button>
     </form>
 
     <h3>this button is for what?</h3>
     <form action="/home.jsp" method="post">
-        <button type="submit"></button>
+        <button type="submit">Submit</button>
     </form>
 
         <%--login page part of exercise, if login as admin w pw redirected to admin page,
