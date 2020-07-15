@@ -19,6 +19,7 @@
 </head>
 <body>
 
+
     <%--use include directive for nav and footer--%>
     <%@ include file="partials/navbar.jsp"%>
 
@@ -29,13 +30,13 @@
     <%--create an aboutme.jsp file in partials and include in home.jsp--%>
     <%@ include file="partials/aboutme.jsp"%>
 
-    <%
-    if (firstName != null){
-        if (firstName.equals("George")){
-            response.sendRedirect("/index.jsp");
-        }
-    }
-    %>
+<%--    <%--%>
+<%--    if (firstName != null){--%>
+<%--        if (firstName.equals("George")){--%>
+<%--            response.sendRedirect("/index.jsp");--%>
+<%--        }--%>
+<%--    }--%>
+<%--    %>--%>
 
     <h1>Welcome To The Site!</h1>
     <p>Path: <%= request.getRequestURL() %></p>
