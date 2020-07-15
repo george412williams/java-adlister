@@ -20,14 +20,13 @@
 </head>
 <body>
 
+<%@ include file="partials/navbar.jsp"%>
     <h1>Login:</h1>
     <form action="/login.jsp" method="post">
-<%--        <label for="username">Username:</label>--%>
+        <label for="username">Username:</label>
         <input type="text" id="username" placeholder="Username">
-
-<%--        <label for="password">Password:</label>--%>
+        <label for="password">Password:</label>
         <input type="text" id="password" placeholder="Password">
-
         <button type="submit">Login</button>
     </form>
 
@@ -37,7 +36,7 @@ redirect the user to the profile page; otherwise, redirect back to the login for
 
 
     <c:if test="${username == admin and password == password}">
-        <% response.sendRedirect("/profile.jsp"); %>
+<%--        <% response.sendRedirect("/profile.jsp"); %>--%>
     </c:if>
 
     <c:choose>

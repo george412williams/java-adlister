@@ -11,6 +11,8 @@
 <% request.setAttribute("myTasks", new String[] {"Todo 1", "Todo 2", "Todo 3"}); %>
 <html>
 <head>
+    <%@ include file="partials/navbar.jsp"%>
+
     <title>To Do</title>
 </head>
 <body>
