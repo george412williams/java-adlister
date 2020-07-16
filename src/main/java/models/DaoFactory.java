@@ -8,7 +8,7 @@ package models;
     // 3 steps
         // set up a value
         // set up meths
-        //
+        // #3? find out below
 public class DaoFactory {
 
     //access the interface, not base level of the data

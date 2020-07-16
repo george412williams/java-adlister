@@ -33,8 +33,10 @@ public class IndexServlet extends HttpServlet {
         // start type out doget, by dog hit tab for auto:
         //super.doGet(req, resp);
 
+        //TODO review this, and point correctly to the files before run
         req.setAttribute("allBurgers", allBurgers);
         req.getRequestDispatcher("WEB-INF/view/index.jsp").forward(req,resp);
-
+                                        // diff btwn redirect/forward
+                                        // redirect w post / forward
     }
 }
