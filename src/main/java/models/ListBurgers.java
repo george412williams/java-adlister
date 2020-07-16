@@ -7,7 +7,7 @@ public class ListBurgers implements McBurgers{
 
     private List<McBurger> burgers = new ArrayList<>();
 
-    public ListBurgersDao() {
+    public ListBurgers() {
         // use ingredients already made, make burgers
 
 
