@@ -10,5 +10,5 @@ public interface Ingredients {
     // if we create an ingredient, return the id so we can
     // do stuff w it
 
-    long createIngredient(Ingredient ingredientNew);
+    long createIngredient(Ingredient ingredient);
 }

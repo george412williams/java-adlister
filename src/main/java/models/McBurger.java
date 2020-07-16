@@ -27,6 +27,7 @@ public class McBurger implements Serializable {
     private int priceInCents;
     private String description;
     private List<Ingredient> ingredients;
+        // storing the ingredients of ea burger here
 
     //next setup constructor for this class cmdN
         // doing this way bc, don't need spec args, use any
