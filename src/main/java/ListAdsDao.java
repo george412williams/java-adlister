@@ -11,6 +11,8 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+//    todo 3. make sure a listing of all ads is made and sent to index.jsp
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(

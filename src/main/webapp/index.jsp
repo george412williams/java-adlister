@@ -11,5 +11,9 @@
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
     </div>
+
+<%-- todo 1. recieve all from listadsdao --%>
+
+<%-- todo 2. loop through all the ads and display ea one --%>
 </body>
 </html>
