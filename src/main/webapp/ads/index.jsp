@@ -14,7 +14,6 @@
 <body>
 <div class="list-group">
     <c:forEach items="${all}" var="ad">
-        <p>list</p>
         <p>${ad.title} - ${ad.description}</p>
     </c:forEach>
 </div>

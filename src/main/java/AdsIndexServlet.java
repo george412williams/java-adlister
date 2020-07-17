@@ -9,9 +9,9 @@ import java.io.IOException;
 @WebServlet(name = "AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/ads/index.jsp").forward(request, response);
-        DaoFactory.getAdsDao().all();
         request.setAttribute("all", DaoFactory.getAdsDao().all());
+        request.getRequestDispatcher("/ads/index.jsp").forward(request, response);
+
 //        request.getRequestDispatcher("../webapp/index.jsp").forward(request,response);
     }
 
