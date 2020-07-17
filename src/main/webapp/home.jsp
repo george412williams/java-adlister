@@ -15,7 +15,9 @@
 
 <html>
 <head>
-    <title>Home Page</title>
+    <jsp:include page="partials/head.jsp">
+        <jsp:param name="title" value="mine" />
+    </jsp:include>
 </head>
 <body>
 

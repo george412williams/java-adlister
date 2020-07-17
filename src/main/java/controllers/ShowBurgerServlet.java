@@ -32,4 +32,9 @@ public class ShowBurgerServlet extends HttpServlet {
         req.getRequestDispatcher("../webapp/burgers-show.jsp").forward(req,resp);
 
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+    }
 }

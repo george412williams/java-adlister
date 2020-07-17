@@ -7,6 +7,9 @@
     </jsp:include>
 </head>
 <body>
+<%--            <script type="text/javascript">--%>
+<%--                console.log("its working")--%>
+<%--                console.log(${allBurgers})</script>--%>
 
 <%--<% response.sendRedirect("/home.jsp"); %>--%>
     <jsp:include page="partials/navbar.jsp" />
@@ -15,9 +18,11 @@
 <%--        use bootstrap list group, he chose one w hover and removed active class--%>
 <%--        list all burgers w link to their indiv pages--%>
         <div class="list-group">
-            <script type="text/javascript">
-                console.log("its working")
-                console.log(${allBurgers})</script>
+            <c:forEach items="${allBurgers}" var="burger">
+<%--                <a href="/burgers/show?id=${burger.id}" class="list-group-item list-group-item-action">--%>
+                    <strong>${burger.title}</strong> - ${burger.description}
+
+            </c:forEach>
             <c:forEach items="${allBurgers}" var="burger">
                 <a href="/burgers/show?id=${burger.id}" class="list-group-item list-group-item-action">
                     <strong>${burger.title}</strong> - ${burger.description}

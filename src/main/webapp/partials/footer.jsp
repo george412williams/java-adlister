@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Footer</title>
+
 </head>
 <body>
-<p>footer</p>
+<h5 class="text-uppercase">Footer</h5>
+<a href="#top">go to top</a>
+
+<div>
+
+
+</div>
+
 </body>
 </html>
