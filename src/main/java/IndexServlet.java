@@ -10,8 +10,8 @@ import java.io.IOException;
 public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/").forward(request, response);
-//        DaoFactory.getAdsDao();
-        System.out.println(DaoFactory.getAdsDao());
+//        DaoFactory.getAdsDao().all;
+
     }
 
 

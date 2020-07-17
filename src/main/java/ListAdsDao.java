@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
+
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -9,6 +10,18 @@ public class ListAdsDao implements Ads {
             ads = generateAds();
         }
         return ads;
+    }
+
+    @Override
+    public Ad findById(long id) {
+        return ads.get((int)id - 1);
+    }
+
+    @Override
+    public long createAd(Ad adNew) {
+        adNew.setId(ads.size() + 1);
+        ads.add(adNew);
+        return adNew.getId();
     }
 
 //    todo 3. make sure a listing of all ads is made and sent to index.jsp
