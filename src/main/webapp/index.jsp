@@ -15,6 +15,9 @@
 <%--        use bootstrap list group, he chose one w hover and removed active class--%>
 <%--        list all burgers w link to their indiv pages--%>
         <div class="list-group">
+            <script type="text/javascript">
+                console.log("its working")
+                console.log(${allBurgers})</script>
             <c:forEach items="${allBurgers}" var="burger">
                 <a href="/burgers/show?id=${burger.id}" class="list-group-item list-group-item-action">
                     <strong>${burger.title}</strong> - ${burger.description}

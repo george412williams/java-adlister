@@ -35,7 +35,7 @@ public class IndexServlet extends HttpServlet {
 
         //TODO review this, and point correctly to the files before run
         req.setAttribute("allBurgers", allBurgers);
-        req.getRequestDispatcher("WEB-INF/view/index.jsp").forward(req,resp);
+        req.getRequestDispatcher("../webapp/index.jsp").forward(req,resp);
                                         // diff btwn redirect/forward
                                         // redirect w post / forward
     }

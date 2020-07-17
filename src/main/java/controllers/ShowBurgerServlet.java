@@ -29,7 +29,7 @@ public class ShowBurgerServlet extends HttpServlet {
         //send that burger back to the jsp
         req.setAttribute("burger", thisBurger);
 
-        req.getRequestDispatcher("/webapp/burgers-show.jsp").forward(req,resp);
+        req.getRequestDispatcher("../webapp/burgers-show.jsp").forward(req,resp);
 
     }
 }
