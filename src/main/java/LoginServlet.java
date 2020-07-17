@@ -11,16 +11,22 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/login.jsp").forward(request, response);
+    }
 
-        // goes post
-        if (request.getMethod().equalsIgnoreCase("post")) {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            if (username.equals("admin") && password.equals("password")) {
-                response.sendRedirect("../webapp/profile.jsp");
-            }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        boolean validAttempt = username.equals("admin") && password.equals("password");
+
+        if (validAttempt) {
+            response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
         }
 
+
+//        if (username.equals("admin") && password.equals("password")) {
+//            response.sendRedirect("../webapp/profile.jsp");
+//        }
     }
-    //post
 }
