@@ -14,18 +14,6 @@
         <h1>Welcome to the Adlister!</h1>
     </div>
 
-<%-- todo 1. recieve all from listadsdao --%>
-<%-- todo 2. loop through all the ads and display ea one --%>
-
-
-
-<%--    <div class="list-group">--%>
-<%--        <c:forEach items="${all}" var="ads">--%>
-<%--            <a href="/ads/show?id=${ad.id}" class="list-group-item list-group-item-action">--%>
-<%--                <strong>${ad.title} - ${ad.description}</strong>--%>
-<%--            </a>--%>
-<%--        </c:forEach>--%>
-<%--    </div>--%>
 
 
 </body>
