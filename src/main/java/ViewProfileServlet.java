@@ -14,14 +14,14 @@ public class ViewProfileServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        request.getSession().getAttribute("loggedIn");
+        request.getSession().getAttribute("user");
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
 
         boolean validAttempt = username.equals("admin") && password.equals("password");
-//        String validUser = (String) session.getAttribute("loggedIn");
+//        String validUser = (String) session.getAttribute("user");
 
 //        if (username != null) {
 
@@ -30,9 +30,9 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         } else {
             request.getRequestDispatcher("/profile").forward(request, response);
-            session.setAttribute("loggedIn", true);
+            session.setAttribute("user", true);
 //            response.sendRedirect("/profile");
-//            System.out.println(session.getAttribute("loggedIn"));
+//            System.out.println(session.getAttribute("user"));
         }
     }
 }

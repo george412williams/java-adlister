@@ -16,8 +16,8 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (request.getParameter("username") == "admin")
-        session.getAttribute("loggedIn");
-        session.removeAttribute("loggedIn");
+        session.getAttribute("user");
+        session.removeAttribute("user");
 
 
     }
