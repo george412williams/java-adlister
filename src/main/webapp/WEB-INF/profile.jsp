@@ -8,10 +8,10 @@
 <body>
     <jsp:include page="../partials/navbar.jsp" />
 <%
-//    String username = request.getParameter("username");
+    String username = request.getParameter("username");
 %>
     <div class="container">
-        <h1>Welcome, admin${username}.</h1>
+        <h1>Welcome, admin${param.username}.</h1>
     </div>
 
 </body>

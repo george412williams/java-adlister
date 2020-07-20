@@ -12,7 +12,7 @@ public class ViewProfileServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/profile.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
         request.getSession().getAttribute("loggedIn");
 
@@ -20,15 +20,19 @@ public class ViewProfileServlet extends HttpServlet {
         String password = request.getParameter("password");
 
 
-//        String validator = request.getAttribute(String loggedIn);
-        String validUser = (String) session.getAttribute("loggedIn");
+        boolean validAttempt = username.equals("admin") && password.equals("password");
+//        String validUser = (String) session.getAttribute("loggedIn");
 
-        if (validUser != null) {
-            session.setAttribute("loggedIn", true);
-            response.sendRedirect("/profile");
-            System.out.println(session.getAttribute("loggedIn"));
-        } else {
+//        if (username != null) {
+
+        if (validAttempt == false) {
             response.sendRedirect("/login");
+            return;
+        } else {
+            request.getRequestDispatcher("/profile").forward(request, response);
+            session.setAttribute("loggedIn", true);
+//            response.sendRedirect("/profile");
+//            System.out.println(session.getAttribute("loggedIn"));
         }
     }
 }
