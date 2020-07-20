@@ -11,7 +11,7 @@
     String username = request.getParameter("username");
 %>
     <div class="container">
-        <h1>Welcome, admin${param.username}.</h1>
+        <h1>Welcome, admin${param.username}. ${sessionScope['user']}</h1>
     </div>
 
 </body>
