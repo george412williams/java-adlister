@@ -90,10 +90,11 @@ public class MySQLAdsDao implements Ads{
             ResultSet generatedKeys = stmnt.getGeneratedKeys();
             if (generatedKeys.next()) {
                 System.out.println("Inserted a new record! New id: " + generatedKeys.getLong(1));
+                lastInsertedId = generatedKeys.getLong(1);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return null;
+        return lastInsertedId;
     }
 }
