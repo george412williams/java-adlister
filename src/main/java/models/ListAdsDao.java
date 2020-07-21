@@ -1,3 +1,5 @@
+package models;
+
 import models.Ad;
 import models.Ads;
 
