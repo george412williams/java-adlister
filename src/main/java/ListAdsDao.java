@@ -1,3 +1,6 @@
+import models.Ad;
+import models.Ads;
+
 import java.util.ArrayList;
 import java.util.List;
 
