@@ -4,15 +4,15 @@ USE adlister_db;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    userName VARCHAR(50),
-    email VARCHAR (50),
-    password VARCHAR (50)
+    userName VARCHAR(50) NOT NULL,
+    email VARCHAR (50) NOT NULL UNIQUE,
+    password VARCHAR (50) NOT NULL
 );
 
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    title VARCHAR(50),
-    description VARCHAR(250),
+    title VARCHAR(50) NOT NULL,
+    description TEXT,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
