@@ -45,7 +45,7 @@ public class MySQLAdsDao implements Ads {
     public Long insert(Ad ad) {
         PreparedStatement stmnt = null;
         String sqlQuery = "";
-        //string userinput 0 "%" + query + "%";
+        //string userInput 0 "%" + query + "%";
         try {
             Statement stmt = connection.prepareStatement(sqlQuery);
             stmt.executeUpdate(createInsertQuery(ad), Statement.RETURN_GENERATED_KEYS);
