@@ -7,8 +7,8 @@ public class DaoFactory {
     private static Config config = new Config();
     private static Users usersDao;
 
-    //todo: Add functionality to the DaoFactory class to return an instance of the users data access object.
-        //refer to mysqlusersdao
+    //todone: Add functionality to the DaoFactory class to return an instance of the users data access object.
+
     public static Ads getAdsDao() {
         if (adsDao == null) {
             adsDao = new MySQLAdsDao(config);
