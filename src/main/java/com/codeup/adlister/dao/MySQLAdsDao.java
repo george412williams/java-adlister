@@ -45,7 +45,7 @@ public class MySQLAdsDao implements Ads {
     public Long insert(Ad ad) {
         PreparedStatement stmnt = null;
         String sqlQuery = "";
-        //string userInput 0 "%" + query + "%";
+        String userInput = "%" + sqlQuery + "%";
         try {
             Statement stmt = connection.prepareStatement(sqlQuery);
             stmt.executeUpdate(createInsertQuery(ad), Statement.RETURN_GENERATED_KEYS);
@@ -57,7 +57,6 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    //prepared statements here
     private String createInsertQuery(Ad ad) {
         return "INSERT INTO ads(user_id, title, description) VALUES "
             + "(" + ad.getUserId() + ", "
