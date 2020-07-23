@@ -1,7 +1,9 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,20 +12,32 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         // TODOne: show the registration form
-        response.sendRedirect("/register");
+        request.getRequestDispatcher("/WEB-INF/ads/register.jsp")
+                .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // TODO: ensure the submitted information is valid
-        // TODO: create a new user based off of the submitted information
+        // TODOne: ensure the submitted information is valid
+        // TODOne: create a new user based off of the submitted information
         // TODOne: if a user was successfully created, send them to their profile
-
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String passwordValidate = request.getParameter("validate_password");
+        //PW Validation
+        boolean inputInvalid = username.isEmpty()
+                || email.isEmpty()
+                || password.isEmpty()
+                || (! password.equals(passwordValidate));
+        if (inputInvalid) {
+            response.sendRedirect("/register");
+            return;
+        }
         //new user
-        User user = new User(
-
-        );
+        User user = new User(username, email, password);
+        DaoFactory.getUsersDao().insert(user);
         //need to get the profile? or can just redirect, does user carry over - check correct file placement
         response.sendRedirect("/profile");
     }
