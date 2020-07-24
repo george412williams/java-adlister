@@ -38,7 +38,8 @@ public class RegisterServlet extends HttpServlet {
         //new user
         User user = new User(username, email, password);
         DaoFactory.getUsersDao().insert(user);
-        //need to get the profile? or can just redirect, does user carry over - check correct file placement
+
+        //need to test user carries over
         response.sendRedirect("/profile");
     }
 }
