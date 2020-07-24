@@ -32,10 +32,10 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
+
         boolean validAttempt = Password.check(password, user.getPassword());
 
         if (validAttempt) {
-            // TODOne: store the logged in user object in the session, instead of just the username
             request.getSession().setAttribute("user", username);
             response.sendRedirect("/profile");
         } else {
